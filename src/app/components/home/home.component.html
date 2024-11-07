@@ -1,0 +1,38 @@
+<nav>
+  <h2>ToDoApp</h2>
+</nav>
+
+<div class="main-content">
+  <div class="task-container">
+    <!-- Görev Listesi -->
+    <div *ngFor="let task of tasks" class="task-item p-3 mb-3" [ngStyle]="{'background-color': task.color}">
+      <h3>{{ task.taskName || 'Görev Adı Yok' }}</h3>
+      <p>{{ task.taskDescription || 'Açıklama Yok' }}</p>
+
+      <!-- Düzenle İkonu -->
+      <img width="30" height="30" src="https://img.icons8.com/ios/50/FFFFFF/connection-status-off.png" alt="edit-icon"
+        class="edit-icon" (click)="openEditTaskModal(task, $event)" />
+    </div>
+    <!-- Yeni Görev Ekleme Kutusu -->
+    <div class="task-item add-task p-3 mb-3" (click)="openAddTaskModal()">
+      <h1>+</h1>
+      <p>Yeni Not Ekle</p>
+    </div>
+  </div>
+
+  <!-- Yeni Görev Ekleme Modalı -->
+  <app-create-task
+    *ngIf="isAddTaskModalOpen"
+    (closeModal)="closeAddTaskModal()"
+    (taskAdded)="loadTasks()">
+  </app-create-task>
+
+  <!-- Görev Düzenleme Modalı -->
+  <app-edit-task 
+  *ngIf="isEditTaskModalOpen" 
+  [task]="editableTask" 
+  (taskUpdated)="loadTasks(); closeEditTaskModal()"
+  (taskDeleted)="loadTasks(); closeEditTaskModal()"
+  (taskCompleted)="handleTaskCompleted()">
+</app-edit-task>
+</div>

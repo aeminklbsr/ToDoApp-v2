@@ -1,0 +1,163 @@
+/* Modal Arka Plan */
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Saydam siyah arka plan */
+    z-index: 1050;
+    overflow: hidden;
+}
+
+/* Modal İçeriği */
+.modal-dialog {
+    width: 100%;
+    max-width: 500px; /* Modalın maksimum genişliği */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(30%);
+}
+
+/* Sabit Yüksekliğe Sahip Modal Kutusu */
+.modal-content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    height: 500px; /* Sabit yükseklik */
+    overflow: hidden; /* İçerik taşarsa gizle */
+    position: relative;
+}
+
+
+/* Animasyon */
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Modal Başlık (Header) */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e0e0e0;
+    position: relative;
+}
+
+/* Kapatma Butonu */
+.modal-header .btn {
+    background: transparent;
+    border: none;
+    padding: 0;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.modal-header .btn img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(0.5);
+    transition: transform 0.2s;
+}
+
+.modal-header .btn:hover img {
+    transform: scale(1.1); /* Hover'da hafif büyütme */
+}
+
+
+.modal-title {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+/* Modal Gövde (Sabit İç Alan) */
+.modal-body {
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    overflow-y: auto; /* İçerik taştığında kaydırma ekle */
+    height: calc(80vh - 150px); /* Header ve Footer çıkarılmış yükseklik */
+}
+
+
+.modal-body input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+/* Modal Alt Kısım (Footer) */
+.modal-footer {
+    background-color: #f1f1f1;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: flex-end; /* Sağ tarafa hizala */
+}
+
+/* Butonları İçeren Container */
+.button-container {
+    background-color: #ffffff; /* Beyaz arka plan */
+    padding: 0.5rem;
+    border-radius: 8px; /* Hafif yuvarlak köşeler */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+    display: flex;
+    gap: 0.25rem; /* Butonlar arası boşluk */
+}
+
+/* Küçük ve Kompakt Butonlar */
+.button-container .btn {
+    background: transparent;
+    border: none;
+    padding: 0.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border-radius: 50%; /* Yuvarlak görünüm */
+}
+
+/* Hover Efekti */
+.button-container .btn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.button-container .btn img {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* Genişletilebilir textarea */
+.modal-body textarea {
+    width: 100%; /* Genişlik: Tam genişlik */
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+    padding: 0.75rem;
+    font-size: 1rem;
+    resize: vertical; /* Yalnızca dikey olarak genişletilebilir */
+    min-height: 80px; /* Minimum yüksekliği ayarla */
+    max-height: 150px; /* Textarea için maksimum yükseklik */
+    overflow-y: auto; /* İçerik kaydırmalı */
+}

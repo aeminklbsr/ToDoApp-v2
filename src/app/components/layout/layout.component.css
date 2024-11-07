@@ -1,0 +1,8 @@
+/* Sidebar için stil ayarları */
+.sidebar {
+  height: 100vh; /* Tam sayfa yüksekliği */
+  width: 250px; /* Sabit genişlik */
+  flex-shrink: 0; /* Daralmayı önler */
+  position: sticky; /* Sayfa kaydırıldığında sabit kalmasını sağlar */
+  top: 0; /* Üstten sabitleme */
+}

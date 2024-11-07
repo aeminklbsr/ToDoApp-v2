@@ -1,0 +1,33 @@
+<div class="modal" tabindex="-1" role="dialog" style="display: block;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Yeni Görev Ekle</h5>
+        <button type="button" class="btn" (click)="close()">
+          <img width="25" height="25" src="https://img.icons8.com/ios-filled/50/BBBBBB/x.png" alt="x" />
+        </button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <h6>Görev Adı</h6>
+          <input type="text" [(ngModel)]="newTask.taskName" placeholder="Görev Adı" class="form-control mb-2" required />
+        </div>
+        <hr>
+        <div>
+          <h6>Açıklama</h6>
+          <textarea [(ngModel)]="newTask.taskDescription" placeholder="Açıklama" class="form-control mb-2"></textarea>
+        </div>
+        <hr>
+        <div>
+          <h6>Etiketler</h6>
+          <input type="text" [(ngModel)]="newTask.tags" placeholder="Etiketler" class="form-control mb-2" />
+        </div>
+      </div>
+      <div class="button-container">
+        <button type="button" class="btn" (click)="handleAddTask()">
+          <img width="25" height="25" src="https://img.icons8.com/sf-black/64/000000/create-new.png" alt="create-new"/>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

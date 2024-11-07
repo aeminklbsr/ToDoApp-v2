@@ -1,0 +1,116 @@
+.main-content {
+    display: flex;
+    justify-content: center; /* Ana içeriği yatayda ortalar */
+    padding: 30px;
+    border-style: groove;
+    border-radius: 20px;
+}
+
+.task-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.task-item {
+    width: 350px; /* Kart genişliği */
+    height: 300px;
+    padding: auto;
+    color: #fff;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative; /* Menü konumlandırması için gerekli */
+}
+
+.task-item:active {
+    transform: scale(0.95); /* Tıklama anında küçülme efekti */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Gölgeli efekt */
+}
+
+.add-task {
+    background-color: #e0e0e0; /* Yeni görev kutusu için gri renk */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-task h1 {
+    font-size: 2.5rem; /* Büyük + işareti */
+    margin: 0;
+}
+
+.add-task p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Üç Nokta Menü Simge Stili */
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 10px; /* İçerik ile menü arasında boşluk */
+    align-items: center;
+}
+
+.menu {
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+/* Açılır Menü Stili */
+.menu-options {
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    background-color: white;
+    color: black;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    padding: 5px 0;
+    min-width: 100px;
+    text-align: left;
+}
+
+.menu-options button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: none;
+    color: black;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.menu-options button:hover {
+    background-color: #f0f0f0;
+}
+
+.edit-icon {
+    position: absolute;
+    top: 10px;              /* Kartın üstünden boşluk */
+    right: 10px;            /* Kartın sağından boşluk */
+    cursor: pointer;        /* Tıklanabilir olduğunu belirtir */
+    opacity: 0;             /* Varsayılan olarak görünmez */
+    transition: opacity 0.2s ease; /* Geçiş animasyonu */
+  }
+  
+  .task-item:hover .edit-icon {
+    opacity: 1; /* Fare ile üzerine gelindiğinde görünür hale gelir */
+  }

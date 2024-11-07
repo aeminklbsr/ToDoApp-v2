@@ -1,0 +1,44 @@
+<div class="modal" tabindex="-1" role="dialog" style="display: block;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Görevi Düzenle</h5>
+        <button type="button" class="btn" (click)="taskUpdated.emit()">
+          <img width="25" height="25" src="https://img.icons8.com/ios-filled/50/BBBBBB/x.png" alt="x" />
+        </button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <h6>Görev Adı</h6>
+          <input type="text" [(ngModel)]="task!.taskName" placeholder="Görev Adı" class="form-control mb-2" required />
+        </div>
+        <hr>
+        <div>
+          <h6>Açıklama</h6>
+          <textarea [(ngModel)]="task!.taskDescription" placeholder="Açıklama" class="form-control mb-2"> </textarea>
+        </div>
+        <hr>
+        <div>
+          <h6>Etiket</h6>
+          <input type="text" [(ngModel)]="task!.tags" placeholder="Etiketler" class="form-control mb-2" />
+        </div>
+
+      </div>
+
+      <div class="button-container">
+
+        <button type="button" class="btn" (click)="updateTask()">
+          <img width="25" height="25" src="https://img.icons8.com/ios-filled/50/0012FF/available-updates.png"
+            alt="available-updates" />
+        </button>
+        <button type="button" class="btn" (click)="completeTask()">
+          <img width="25" height="25" src="https://img.icons8.com/sf-black/64/00FF03/checkmark.png" alt="checkmark" />
+        </button>
+        <button type="button" class="btn" (click)="deleteTask()">
+          <img width="25" height="25" src="https://img.icons8.com/ios-glyphs/30/FF0000/filled-trash.png"
+            alt="filled-trash" />
+        </button>
+
+      </div>
+    </div>
+  </div>
